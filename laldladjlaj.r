@@ -1,0 +1,5 @@
+library(caret)
+tripDetails <- read.csv("tripDetails.csv",row.names=1,stringsAsFactors = T)
+View(tripDetails)
+str(tripDetails)
+summary(tripDetails)

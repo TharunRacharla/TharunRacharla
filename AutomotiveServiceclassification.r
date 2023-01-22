@@ -1,0 +1,16 @@
+library(caret)
+library(class)
+serviceTrain_1 <- read.csv("serviceTrainData.csv",stringsAsFactors = T)
+serviceTest_1 <- read.csv("serviceTestData.csv",stringsAsFactors = T)
+View(serviceTrain_1)
+summary(serviceTrain_1)
+View(serviceTest_1)
+summary(serviceTest_1)
+str(serviceTrain_1)
+str(serviceTest_1)
+help(knn)
+predictedasknn <- knn(train = serviceTrain_1[,-6],test = serviceTest_1[,-6],cl=serviceTrain_1$Service,k=3)
+predictedasknn
+confasmatrix <- confusionMatrix(predictedasknn,serviceTest_1[,6])
+confasmatrix
+confusionMatrix()
